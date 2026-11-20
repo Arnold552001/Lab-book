@@ -1,0 +1,207 @@
+/* ===== Chromelite Technologies Limited: chromelite.css ===== */
+
+:root {
+  --navy: #003153;
+  --navy-dark: #00223a;
+  --orange: #FF6600;
+  --text: #1c2833;
+  --light: #f2f5f8;
+  --border: #c5d0db;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+
+/* Clearfix for floated cards */
+.clearfix::after { content: ""; display: table; clear: both; }
+
+/* ----- Header and navbar ----- */
+.site-header {
+  background: #fff;
+  border-bottom: 4px solid var(--orange);
+}
+
+.site-header > .container { padding-top: 1rem; padding-bottom: 1rem; }
+
+.site-header img { display: block; height: auto; }
+
+.navbar { background: var(--navy); }
+
+.navbar ul {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  list-style: none;
+}
+
+.navbar a {
+  display: block;
+  padding: 0.9rem 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+  outline: none;
+}
+
+.navbar a[aria-current="page"] { border-bottom-color: #fff; }
+.navbar a[aria-current="page"]:hover { border-bottom-color: var(--orange); }
+
+/* ----- Intro ----- */
+.intro {
+  padding: 3.5rem 0;
+  background: var(--navy);
+  color: #fff;
+}
+
+.intro h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.intro h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-top: 0.75rem;
+  background: var(--orange);
+}
+
+.intro p { max-width: 70ch; margin: 0; font-size: 1.1rem; }
+
+/* ----- Why Choose Chromelite (floated cards, 3 in a row) ----- */
+.why { padding: 3.5rem 0; background: var(--light); }
+
+.why h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--navy);
+}
+
+.card {
+  float: left;
+  width: calc((100% - 3rem) / 3);
+  margin-right: 1.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--orange);
+  border-radius: 4px;
+}
+
+.card:last-child { margin-right: 0; }
+
+.card h3 { margin-bottom: 0.6rem; font-size: 1.25rem; color: var(--navy); }
+.card p { margin: 0; }
+
+/* ----- Pricing page ----- */
+main > .container { padding-top: 2.5rem; padding-bottom: 3rem; }
+
+.page-title { font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--navy); }
+.page-note { margin: 0.5rem 0 1.5rem; color: #4a5a6a; }
+
+.table-wrap { overflow-x: auto; }
+
+.pricing-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.pricing-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pricing-table thead th {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.pricing-table tbody th[rowspan] {
+  background: #fff1e6;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.pricing-table .num { text-align: right; white-space: nowrap; }
+
+.pricing-table tfoot th.label {
+  text-align: right;
+  background: var(--light);
+  color: var(--navy);
+}
+
+.pricing-table tfoot td { font-weight: 700; background: var(--light); }
+
+.pricing-table tfoot .grand th,
+.pricing-table tfoot .grand td {
+  background: var(--orange);
+  color: #fff;
+  font-size: 1.1rem;
+  border-color: var(--orange);
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  padding: 2rem 0;
+  background: var(--navy-dark);
+  color: #e6edf3;
+  border-top: 4px solid var(--orange);
+}
+
+.site-footer p { margin: 0 0 0.3rem; }
+.footer-name { font-weight: 700; font-size: 1.1rem; color: #fff; }
+.site-footer a { color: #fff; }
+.site-footer a:hover { color: var(--orange); }
+.copyright { margin-top: 1rem !important; font-size: 0.9rem; color: #b9c7d4; }
+
+/* ----- Small screens ----- */
+@media (max-width: 760px) {
+  .card {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  .card:last-child { margin-bottom: 0; }
+}

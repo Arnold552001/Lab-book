@@ -1,0 +1,248 @@
+/* ===== URA TIN Registration Portal ===== */
+
+:root {
+  --blue: #003366;
+  --gold: #FFB81C;
+  --white: #ffffff;
+  --page: #f3f5f8;
+  --border: #b8c4d2;
+  --text: #1b2733;
+  --muted: #55657a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ----- Header ----- */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: var(--blue);
+  color: var(--white);
+  border-bottom: 4px solid var(--gold);
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  display: block;
+  background: var(--white);
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* ----- Information bar ----- */
+.info-bar {
+  background: var(--gold);
+  color: var(--blue);
+  font-weight: 700;
+  text-align: center;
+  padding: 0.75rem 1rem;
+}
+
+/* ----- Form area ----- */
+.form-area {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* ----- Toggle-style radio buttons ----- */
+#type-individual,
+#type-business {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.toggle-group {
+  display: flex;
+  margin-bottom: 1.75rem;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--white);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.toggle-btn + .toggle-btn { border-left: 2px solid var(--blue); }
+.toggle-btn:hover { background: #e6edf5; }
+
+#type-individual:checked ~ .toggle-group label[for="type-individual"],
+#type-business:checked ~ .toggle-group label[for="type-business"] {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: inset 0 -4px 0 var(--gold);
+}
+
+#type-individual:focus-visible ~ .toggle-group label[for="type-individual"],
+#type-business:focus-visible ~ .toggle-group label[for="type-business"] {
+  outline: 3px solid var(--gold);
+  outline-offset: -5px;
+}
+
+/* ----- Panels (shown by toggle, no JavaScript) ----- */
+.panel-individual,
+.panel-business { display: none; }
+
+#type-individual:checked ~ .panel-individual { display: block; }
+#type-business:checked ~ .panel-business { display: block; }
+
+.panel-business {
+  padding: 1rem;
+  background: #fff8e6;
+  border-left: 4px solid var(--gold);
+  color: var(--blue);
+}
+
+/* ----- Section A fieldset ----- */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.panel-individual legend {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0 0 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 3px solid var(--gold);
+}
+
+.field { margin-bottom: 1.25rem; }
+
+label,
+.radio-set legend {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.radio-set legend { padding: 0; width: auto; border: 0; font-size: 1rem; }
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+}
+
+#nin { text-transform: uppercase; letter-spacing: 0.08em; }
+
+input[type="file"] {
+  width: 100%;
+  padding: 0.6rem;
+  font: inherit;
+  background: #f8fafc;
+  border: 1.5px dashed var(--blue);
+  border-radius: 6px;
+}
+
+input:focus-visible,
+select:focus-visible,
+.btn-next:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--blue);
+}
+
+/* Validation feedback after the user has typed */
+input:user-invalid,
+select:user-invalid { border-color: #b3261e; }
+
+.hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ----- Gender radios ----- */
+.radio-row { display: flex; align-items: center; gap: 0.5rem 1.25rem; flex-wrap: wrap; }
+
+.radio-row input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--blue);
+  margin: 0;
+}
+
+.radio-row label {
+  display: inline;
+  margin: 0 0.75rem 0 0;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* ----- Next button ----- */
+.btn-next {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.8rem 2.5rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  border: 2px solid var(--blue);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-next:hover { background: #00264d; }
+
+/* ----- Small screens ----- */
+@media (max-width: 560px) {
+  .site-header { flex-direction: column; text-align: center; }
+  .form-area { margin: 1rem; padding: 1rem; }
+  .toggle-group { flex-direction: column; }
+  .toggle-btn + .toggle-btn { border-left: 0; border-top: 2px solid var(--blue); }
+  .btn-next { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

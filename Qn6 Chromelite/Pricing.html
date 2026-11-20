@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing Schedule | Chromelite Technologies Limited</title>
+  <link rel="stylesheet" href="chromelite.css">
+
+  <style>
+    /* Print: hide navbar and page chrome, show only the table with full borders */
+    @media print {
+      .site-header,
+      .site-footer,
+      .page-title,
+      .page-note {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      main .container {
+        max-width: none;
+        padding: 0;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+      }
+
+      .pricing-table {
+        width: 100%;
+        min-width: 0;
+        border-collapse: collapse;
+        font-size: 10pt;
+      }
+
+      .pricing-table caption {
+        display: table-caption;
+        margin-bottom: 8pt;
+        font-size: 13pt;
+        font-weight: 700;
+        color: #000;
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        border: 1px solid #000;
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .pricing-table thead th {
+        font-weight: 700;
+      }
+
+      .pricing-table tr {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="Chromelite.html">
+        <img src="chro.webp" alt="Chromelite Technologies Limited" style="width:180px;">
+      </a>
+    </div>
+    <nav class="navbar" aria-label="Main navigation">
+      <ul class="container">
+        <li><a href="Chromelite.html">Home</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Pricing Schedule</h1>
+      <p class="page-note">All prices are in Ugandan shillings (UGX). VAT is charged at 18%.</p>
+
+      <div class="table-wrap">
+        <table class="pricing-table">
+          <caption>Chromelite Technologies Limited: Pricing Schedule</caption>
+          <thead>
+            <tr>
+              <th scope="col">Item No.</th>
+              <th scope="col">Category</th>
+              <th scope="col">Product Description</th>
+              <th scope="col">Unit Price (UGX)</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Total (UGX)</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Category 1: Branded Stationery -->
+            <tr>
+              <td>1</td>
+              <th scope="rowgroup" rowspan="3">Branded Stationery</th>
+              <td>A5 Branded Notebook</td>
+              <td class="num">5,000</td>
+              <td class="num">100</td>
+              <td class="num">500,000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Branded Ball Pen</td>
+              <td class="num">1,000</td>
+              <td class="num">200</td>
+              <td class="num">200,000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Corporate Letterhead (per sheet)</td>
+              <td class="num">800</td>
+              <td class="num">500</td>
+              <td class="num">400,000</td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <!-- Category 2: Event Materials -->
+            <tr>
+              <td>4</td>
+              <th scope="rowgroup" rowspan="3">Event Materials</th>
+              <td>Roll-up Banner (85 x 200 cm)</td>
+              <td class="num">120,000</td>
+              <td class="num">5</td>
+              <td class="num">600,000</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>A5 Event Flyer</td>
+              <td class="num">300</td>
+              <td class="num">1,000</td>
+              <td class="num">300,000</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Name Badge with Lanyard</td>
+              <td class="num">3,500</td>
+              <td class="num">100</td>
+              <td class="num">350,000</td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <!-- Category 3: Branded Apparel -->
+            <tr>
+              <td>7</td>
+              <th scope="rowgroup" rowspan="3">Branded Apparel</th>
+              <td>Branded Polo Shirt</td>
+              <td class="num">35,000</td>
+              <td class="num">50</td>
+              <td class="num">1,750,000</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Branded Cap</td>
+              <td class="num">12,000</td>
+              <td class="num">100</td>
+              <td class="num">1,200,000</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Branded T-Shirt</td>
+              <td class="num">25,000</td>
+              <td class="num">80</td>
+              <td class="num">2,000,000</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="5" class="label">Subtotal</th>
+              <td class="num">7,300,000</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="5" class="label">VAT @18%</th>
+              <td class="num">1,314,000</td>
+            </tr>
+            <tr class="grand">
+              <th scope="row" colspan="5" class="label">Grand Total</th>
+              <td class="num">8,614,000</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-name">Chromelite Technologies Limited</p>
+      <p>Grand City Complex, Naalya, Kampala</p>
+      <p>Phone: <a href="tel:+256700000000">+256 700 000 000</a></p>
+      <p>Email: <a href="mailto:info@chromelite.co.ug">info@chromelite.co.ug</a></p>
+      <p class="copyright">&copy; 2026 Chromelite Technologies Limited. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

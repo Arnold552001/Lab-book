@@ -1,0 +1,302 @@
+/* ===== MTN Uganda: style.css ===== */
+
+/* ---------- CSS reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+ul { list-style: none; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: #FFCC00;
+  display: flex;
+  padding: 15px 30px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+}
+
+/* Nav links: dark text, no underline, bold, hover colour #333333 */
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.15s;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: #333333;
+}
+
+.navbar a:focus-visible {
+  outline: 3px solid #333333;
+  outline-offset: 3px;
+}
+
+.navbar a[aria-current="page"] {
+  border-bottom: 3px solid #333333;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #333333; /* fallback if hero.jpg is missing */
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Sections ---------- */
+.services,
+.page-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #333333;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  margin: 10px auto 0;
+  background: #FFCC00;
+  border-radius: 3px;
+}
+
+/* ---------- Service cards (Flexbox, three in a row) ---------- */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-top: 6px solid #FFCC00;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #333333;
+}
+
+.card p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* ---------- Yellow button ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #FFCC00;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #FFCC00;
+  border-radius: 6px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #333333;
+  color: #FFCC00;
+  border-color: #333333;
+  outline: none;
+}
+
+/* ---------- Placeholder page ---------- */
+.page-section { text-align: center; }
+
+.placeholder-note {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #fff8d6;
+  border-left: 5px solid #FFCC00;
+  text-align: left;
+}
+
+/* ---------- Bundles page ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.bundles { text-align: left; }
+
+.bundle-intro {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.bundle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.bundle-card {
+  flex: 1 1 320px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-top: 6px solid #FFCC00;
+  border-radius: 8px;
+}
+
+.bundle-card h2 {
+  font-size: 1.4rem;
+  color: #333333;
+}
+
+.bundle-sub {
+  margin-bottom: 15px;
+  color: #666666;
+  font-size: 0.95rem;
+}
+
+.table-wrap { overflow-x: auto; }
+
+.bundle-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bundle-table th,
+.bundle-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+.bundle-table thead th {
+  background: #333333;
+  color: #FFCC00;
+  border-color: #333333;
+}
+
+.bundle-table th:last-child,
+.bundle-table td:last-child {
+  text-align: right;
+}
+
+.bundle-table td:first-child { font-weight: bold; }
+
+.bundle-table tbody tr:nth-child(even) { background: #fff8d6; }
+
+.how-to {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.bundle-extra {
+  margin-top: 30px;
+  padding: 20px 25px;
+  background: #fff8d6;
+  border-left: 6px solid #FFCC00;
+  border-radius: 4px;
+}
+
+.bundle-extra h2 {
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.bundle-note {
+  margin: 20px 0 25px;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #333333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .navbar { padding: 15px 20px; }
+  .hero { height: 320px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

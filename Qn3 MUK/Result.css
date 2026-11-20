@@ -1,0 +1,168 @@
+/* ---------- Reset & base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+  background-color: #ffffff;
+  line-height: 1.5;
+}
+
+/* ---------- Page header ---------- */
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #1b3a2a;
+  margin-top: 20px;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #444444;
+  margin: 6px 0 20px 0;
+}
+
+/* ---------- Metadata bar ---------- */
+.meta-bar {
+  background-color: #EEEEEE;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.meta-bar span + span::before {
+  content: "|";
+  margin: 0 14px;
+  color: #888888;
+}
+
+/* ---------- Results table ---------- */
+main {
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;            /* keeps columns readable; main scrolls sideways on small screens */
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  border: 1px solid #d5d5d5;
+  padding: 10px 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;   /* numbers line up neatly */
+}
+
+/* Title row spanning all columns */
+thead .table-title {
+  background-color: #1b3a2a;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 14px;
+}
+
+/* Column header row */
+thead .col-heads th {
+  background-color: #f2c200;
+  color: #1b1b1b;
+}
+
+/* Left-align the names */
+td.name {
+  text-align: left;
+}
+
+/* Alternating row colours */
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #FFF8F4;
+}
+
+tbody tr:hover {
+  background-color: #fdebd9;
+}
+
+td.total {
+  font-weight: bold;
+}
+
+/* Class averages row */
+tfoot td,
+tfoot th {
+  background-color: #e3e8e5;
+  font-weight: bold;
+  border-top: 2px solid #1b3a2a;
+}
+
+/* ---------- Grade colour-coding (used by table cells AND key chips) ---------- */
+.grade {
+  font-weight: bold;
+}
+
+.grade-A  { color: #0a6b2d; background-color: #d9f2e1; }
+.grade-Bp { color: #2d6a1f; background-color: #e6f5d6; }
+.grade-B  { color: #1f5a8a; background-color: #dcecf8; }
+.grade-C  { color: #8a6100; background-color: #fff0c2; }
+.grade-D  { color: #a24a00; background-color: #ffe0c7; }
+.grade-F  { color: #b00020; background-color: #fbd9de; }
+
+/* ---------- Grade key (colour-coded chips) ---------- */
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 1010px;           /* lines up with the table */
+  margin: 16px auto 0;
+  padding: 0.85rem 1rem;
+  background: #f1f5f2;
+  border: 1px solid #d5dcd8;
+  border-left: 5px solid #f2c200;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.key-title {
+  margin-right: 0.25rem;
+  font-weight: 700;
+  color: #1b3a2a;
+}
+
+.chip {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.chip b {
+  margin-right: 0.3rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #1b3a2a;
+  color: #ffffff;
+  font-size: 0.9rem;
+}

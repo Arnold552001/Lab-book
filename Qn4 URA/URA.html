@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TIN Registration Portal | Uganda Revenue Authority</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="ura.jpg" alt="Uganda Revenue Authority logo" class="logo">
+    <h1>TIN Registration Portal</h1>
+  </header>
+
+  <div class="info-bar" role="note">
+    Have your National ID ready before starting.
+  </div>
+
+  <main class="form-area">
+    <form action="#" method="post" enctype="multipart/form-data">
+
+      <!-- Taxpayer type toggle (radios must be siblings of the panels below) -->
+      <input type="radio" name="taxpayer-type" id="type-individual" value="individual" checked>
+      <input type="radio" name="taxpayer-type" id="type-business" value="business">
+
+      <div class="toggle-group" role="group" aria-label="Taxpayer type">
+        <label for="type-individual" class="toggle-btn">Individual Taxpayer</label>
+        <label for="type-business" class="toggle-btn">Business Entity</label>
+      </div>
+
+      <!-- Section A: Individual Taxpayer -->
+      <fieldset class="panel panel-individual">
+        <legend>Section A: Individual Taxpayer Details</legend>
+
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="nin">NIN</label>
+          <input type="text" id="nin" name="nin" required
+                 pattern="[A-Z]{2}[A-Z0-9]{12}" minlength="14" maxlength="14"
+                 title="14 characters: two capital letters followed by 12 capital letters or digits"
+                 placeholder="e.g. CM12345678ABCD" autocomplete="off">
+          <small class="hint">14 characters: two capital letters, then 12 capital letters or digits.</small>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" autocomplete="bday">
+        </div>
+
+        <fieldset class="field radio-set">
+          <legend>Gender</legend>
+          <div class="radio-row">
+            <input type="radio" id="gender-male" name="gender" value="male">
+            <label for="gender-male">Male</label>
+            <input type="radio" id="gender-female" name="gender" value="female">
+            <label for="gender-female">Female</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="district">District</label>
+          <select id="district" name="district">
+            <option value="">Select a district</option>
+            <option value="kampala">Kampala</option>
+            <option value="wakiso">Wakiso</option>
+            <option value="mukono">Mukono</option>
+            <option value="jinja">Jinja</option>
+            <option value="gulu">Gulu</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 0772 123 456" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="national-id-upload">Upload National ID</label>
+          <input type="file" id="national-id-upload" name="national_id" accept=".jpg,.pdf">
+          <small class="hint">Accepted formats: JPG or PDF.</small>
+        </div>
+
+        <button type="submit" class="btn-next">Next</button>
+      </fieldset>
+
+      <!-- Business Entity: placeholder until its section is specified -->
+      <div class="panel panel-business">
+        <p>The Business Entity section is not available yet. Select Individual Taxpayer to continue.</p>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>

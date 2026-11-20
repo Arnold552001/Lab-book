@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard | ISBAT University</title>
+  <link rel="stylesheet" href="Porta1.css">
+
+  <style>
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .quick-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid #d5d8e3;
+      border-left: 6px solid #1A1A2E;
+      border-radius: 8px;
+    }
+
+    .quick-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+      color: #1A1A2E;
+    }
+
+    .quick-card p {
+      margin: 0 0 1rem;
+      color: #555b6e;
+    }
+
+    .quick-card a {
+      align-self: flex-start;
+      padding: 0.5rem 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      background: #1A1A2E;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .quick-card a:hover,
+    .quick-card a:focus-visible {
+      background: #E2B93B;
+      color: #1A1A2E;
+      outline: none;
+    }
+
+    @media (max-width: 600px) {
+      .quick-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <img src="Isbat.png" alt="ISBAT University logo" class="sidebar-logo">
+    <p class="student-name">TUMURAMYE ARNOLD</p>
+    <nav aria-label="Portal navigation">
+      <ul>
+        <li><a href="Dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="Courses.html">My Courses</a></li>
+        <li><a href="Fees.html">Fee Statement</a></li>
+        <li><a href="Profile.html">Update Profile</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="page-head">
+      <h1>Welcome, TUMURAMYE ARNOLD</h1>
+      <p class="today"><time id="today">Monday, 16 November 2026</time></p>
+      <span class="badge" style="background:#EAF3DE; color:#27500A;">Active</span>
+    </header>
+
+    <section aria-label="Summary">
+      <div class="metric-row">
+        <div class="metric-card">
+          <span class="metric-label">GPA</span>
+          <span class="metric-value">3.62</span>
+          <span class="metric-note">out of 5.0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Credit Hours</span>
+          <span class="metric-value">19</span>
+          <span class="metric-note">this semester</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Outstanding Fee Balance</span>
+          <span class="metric-value">UGX 1,250,000</span>
+          <span class="metric-note">due this semester</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="quick-links-title" class="block">
+      <h2 id="quick-links-title">Quick Links</h2>
+      <div class="quick-grid">
+        <div class="quick-card">
+          <div>
+            <h3>Dashboard</h3>
+            <p>Your summary, results and fee balance.</p>
+          </div>
+          <a href="Dashboard.html">Open Dashboard</a>
+        </div>
+        <div class="quick-card">
+          <div>
+            <h3>My Courses</h3>
+            <p>Enrolled courses and your weekly timetable.</p>
+          </div>
+          <a href="Courses.html">View My Courses</a>
+        </div>
+        <div class="quick-card">
+          <div>
+            <h3>Fee Statement</h3>
+            <p>Payments made and balance remaining.</p>
+          </div>
+          <a href="Fees.html">View Fee Statement</a>
+        </div>
+        <div class="quick-card">
+          <div>
+            <h3>Update Profile</h3>
+            <p>Keep your contact details up to date.</p>
+          </div>
+          <a href="Profile.html">Update My Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  
+    document.getElementById("today").textContent =
+      new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  </script>
+</body>
+</html>

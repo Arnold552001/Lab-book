@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uganda National IT Skills Assessment 2026 | NITA-U</title>
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="Coat.webp" alt="Uganda coat of arms" style="max-width:80px;">
+    <h1>National Information Technology Authority Uganda</h1>
+  </header>
+
+  <section class="banner" aria-label="Survey banner">
+    <img src="OIP.webp" alt="Ugandan citizens using technology" class="banner-image">
+    <h2 class="banner-title">Uganda National IT Skills Assessment 2026</h2>
+  </section>
+
+  <nav class="progress" aria-label="Survey progress">
+    <ol class="steps">
+      <li class="step current" aria-current="step">
+        <span class="step-num">Step 1</span>
+        <span class="step-label">Respondent Details</span>
+      </li>
+      <li class="step">
+        <span class="step-num">Step 2</span>
+        <span class="step-label">Skills Assessment</span>
+      </li>
+      <li class="step">
+        <span class="step-num">Step 3</span>
+        <span class="step-label">Submit</span>
+      </li>
+    </ol>
+  </nav>
+
+  <main class="survey-area">
+    <form action="#" method="post">
+      <fieldset class="survey-section">
+        <legend>Respondent Details</legend>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <select id="title" name="title">
+            <option value="">Select a title</option>
+            <option value="mr">Mr</option>
+            <option value="mrs">Mrs</option>
+            <option value="ms">Ms</option>
+            <option value="dr">Dr</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" minlength="4" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" pattern="\+256[0-9]{9}"
+                 title="Use the format +256 followed by 9 digits, for example +256772123456"
+                 placeholder="+256772123456" autocomplete="tel">
+          <small class="hint">Format: +256 followed by 9 digits.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" autocomplete="bday">
+        </div>
+
+        <fieldset class="form-group radio-group">
+          <legend>Gender</legend>
+          <div class="radio-options">
+            <label class="radio-option" for="gender-male">
+              <input type="radio" id="gender-male" name="gender" value="male"> Male
+            </label>
+            <label class="radio-option" for="gender-female">
+              <input type="radio" id="gender-female" name="gender" value="female"> Female
+            </label>
+            <label class="radio-option" for="gender-none">
+              <input type="radio" id="gender-none" name="gender" value="prefer-not-to-say"> Prefer not to say
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="region">Region</label>
+          <select id="region" name="region">
+            <option value="">Select a region</option>
+            <option value="central">Central</option>
+            <option value="eastern">Eastern</option>
+            <option value="northern">Northern</option>
+            <option value="western">Western</option>
+          </select>
+        </div>
+
+        <fieldset class="form-group radio-group">
+          <legend>Respondent Category</legend>
+          <div class="radio-options">
+            <label class="radio-option" for="cat-ict">
+              <input type="radio" id="cat-ict" name="category" value="ict-professional"> ICT Professional
+            </label>
+            <label class="radio-option" for="cat-gov">
+              <input type="radio" id="cat-gov" name="category" value="government-officer"> Government Officer
+            </label>
+            <label class="radio-option" for="cat-student">
+              <input type="radio" id="cat-student" name="category" value="student"> Student
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-next">Next</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 National Information Technology Authority — Uganda (NITA-U)</p>
+  </footer>
+
+</body>
+</html>

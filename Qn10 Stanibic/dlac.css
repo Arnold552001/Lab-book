@@ -1,0 +1,326 @@
+/* ===== Stanbic Bank Uganda Loan Portal: dlac.css ===== */
+
+:root {
+  --blue: #002D62;
+  --gold: #C9A63A;
+  --page: #f4f6fa;
+  --border: #c3cddb;
+  --text: #1b2433;
+  --muted: #55657a;
+  --error: #b3261e;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.25; }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ----- Header and navbar ----- */
+.site-header { background: #002D62; }
+
+.site-header h1 {
+  padding: 1rem 1.5rem 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #fff;
+}
+
+.navbar { border-bottom: 4px solid var(--gold); }
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0 1rem;
+  list-style: none;
+}
+
+.navbar a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  outline: none;
+}
+
+.navbar a[aria-current="page"] { border-bottom-color: #fff; }
+
+/* ----- Hero (image height is set inline in the HTML) ----- */
+.hero {
+  position: relative;
+  background: var(--blue); /* fallback if the image is missing */
+  overflow: hidden;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 45, 98, 0.55);
+}
+
+.hero-tagline {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ----- Section titles ----- */
+.section-title {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  color: var(--blue);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background: var(--gold);
+}
+
+main section + section { margin-top: 3rem; }
+
+/* ----- Loan cards (Flexbox, side by side) ----- */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.loan-card {
+  flex: 1 1 240px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--gold);
+  border-radius: 6px;
+}
+
+.loan-card h3 { font-size: 1.35rem; color: var(--blue); }
+
+.rate {
+  margin: 0.75rem 0 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.75rem;
+  background: var(--blue);
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--gold);
+  color: var(--blue);
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* ----- Comparison table ----- */
+.table-wrap { overflow-x: auto; }
+
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.compare-table .table-title {
+  background: var(--blue);
+  color: #fff;
+  font-size: 1.1rem;
+  border-color: var(--blue);
+}
+
+.compare-table thead tr:nth-child(2) th {
+  background: var(--gold);
+  color: var(--blue);
+  border-color: var(--gold);
+}
+
+.compare-table tbody th { text-align: left; color: var(--blue); background: #f0f3f9; }
+.compare-table tbody tr:nth-child(even) td { background: #f8f9fc; }
+
+/* ----- Application form ----- */
+.form-page { max-width: 700px; }
+
+.loan-form {
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--blue);
+  border-radius: 6px;
+}
+
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+
+.loan-form legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 3px solid var(--gold);
+}
+
+.loan-form legend + * { clear: both; }
+
+.form-row { display: flex; gap: 1rem; }
+.form-row .form-group { flex: 1; min-width: 0; }
+
+.form-group { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
+
+.form-group label {
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.declaration input:focus-visible,
+.btn-submit:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--blue);
+}
+
+.form-group input:user-invalid,
+.form-group select:user-invalid { border-color: var(--error); }
+
+.hint { margin-top: 0.3rem; font-size: 0.85rem; color: var(--muted); }
+
+/* Eligibility message: only its colours and padding are inline */
+.loan-form [role="status"] {
+  margin: 0 0 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.declaration {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.declaration input {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.25rem;
+  accent-color: var(--blue);
+}
+
+.declaration label { font-weight: 400; color: var(--text); }
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 0.95rem 1rem;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #C9A63A;
+  background: #002D62;
+  border: 2px solid #002D62;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-submit:hover { background: #001a3a; }
+
+/* ----- Footer ----- */
+.site-footer {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #dbe3ee;
+  background: var(--blue);
+  border-top: 4px solid var(--gold);
+}
+
+.site-footer p { margin: 0; }
+
+/* ----- Small screens ----- */
+@media (max-width: 560px) {
+  .form-row { flex-direction: column; gap: 0; }
+  .loan-form { padding: 1.25rem; }
+  .container { padding: 1.75rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

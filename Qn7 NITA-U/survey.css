@@ -1,0 +1,261 @@
+/* ===== NITA-U Uganda National IT Skills Assessment 2026: survey.css ===== */
+
+:root {
+  --blue: #002147;
+  --blue-light: #e8edf4;
+  --gold: #D4AF37;
+  --text: #1a2433;
+  --muted: #5a6778;
+  --border: #b9c3d0;
+  --error: #b3261e;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f4f6f9;
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 { margin: 0; line-height: 1.25; }
+
+/* ----- Header ----- */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: var(--blue);
+  color: #fff;
+  border-bottom: 4px solid var(--gold);
+}
+
+.site-header img { display: block; height: auto; flex-shrink: 0; }
+
+.site-header h1 {
+  font-size: clamp(1.1rem, 3vw, 1.75rem);
+  font-weight: 700;
+}
+
+/* ----- Banner ----- */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: var(--blue); /* fallback if the image is missing */
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 33, 71, 0.55), rgba(0, 33, 71, 0.75));
+}
+
+.banner-title {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.6rem, 5vw, 2.75rem);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ----- Progress indicator ----- */
+.progress {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.steps {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  background: #fff;
+  color: var(--muted);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+
+.step-num {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.step-label { display: block; font-size: 0.95rem; }
+
+.step.current {
+  background: var(--gold);
+  color: var(--blue);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+/* ----- Form area ----- */
+.survey-area {
+  max-width: 800px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+
+.survey-section {
+  padding: 1.75rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--blue);
+  border-radius: 6px;
+}
+
+.survey-section > legend {
+  float: left;               /* lets the legend sit inside the card like a heading */
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 3px solid var(--gold);
+}
+
+.survey-section > legend + * { clear: both; }
+
+/* ----- Field layout: label on top, input below ----- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label,
+.form-group legend {
+  margin-bottom: 0.35rem;
+  padding: 0;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.btn-next:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--blue);
+}
+
+.form-group input:user-invalid,
+.form-group select:user-invalid { border-color: var(--error); }
+
+.hint {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ----- Radio groups ----- */
+.radio-group { padding: 0; }
+
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+}
+
+.form-group .radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-weight: 400;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0;
+  accent-color: var(--blue);
+}
+
+/* ----- Next button ----- */
+.btn-next {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.8rem 2.5rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-next:hover { background: var(--blue); color: var(--gold); }
+
+/* ----- Footer ----- */
+.site-footer {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  background: var(--blue);
+  color: #dbe3ee;
+  border-top: 4px solid var(--gold);
+}
+
+.site-footer p { margin: 0; }
+
+/* ----- Small screens ----- */
+@media (max-width: 560px) {
+  .site-header { flex-direction: column; text-align: center; }
+  .steps { flex-direction: column; }
+  .survey-section { padding: 1.25rem; }
+  .btn-next { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
